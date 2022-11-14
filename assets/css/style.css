@@ -1,0 +1,240 @@
+:root {
+    --grey-color: #24292e;
+    --dark-grey-color: #1f2428;
+    --light-grey-color: #6a737d;
+    --blue-color: #0366d6;
+    --purple-color: #742e99;
+    --white-color: #ffffff;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--white-color);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--dark-grey-color);
+    color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main {
+    padding: 1rem 0;
+    min-height: 100vh;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.search-form-container,
+.cards-container,
+.repos-container {
+    margin: 0 1rem;
+}
+
+.search-form-container .search-form {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.search-form-container .search-form input[type="search"] {
+    font-size: 1.25rem;
+    font-weight: inherit;
+    font-family: inherit;
+    background-color: var(--grey-color);
+    color: var(--white-color);
+    width: 100%;
+    max-width: 340px;
+    border: 2px solid var(--light-grey-color);
+    border-radius: 0.6rem;
+    padding: 0.5rem 1rem;
+    outline: 0;
+}
+
+.search-form-container .search-form input[type="search"]::placeholder {
+    color: var(--light-grey-color);
+}
+
+.search-form-container .search-form button {
+    display: block;
+    background-color: var(--blue-color);
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.search-form-container .search-form button:hover {
+    transform: scale(1.1);
+}
+
+.search-form-container .search-form button:active {
+    transform: scale(0.9);
+}
+
+.search-form-container .search-form button img {
+    display: block;
+    width: 32px;
+}
+
+.cards-container {
+    background-color: var(--grey-color);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+.cards-container .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.cards-container .card .profile-picture {
+    min-width: 180px;
+}
+
+.cards-container .card .profile-picture img {
+    display: block;
+    width: 180px;
+    border: 10px solid var(--blue-color);
+    border-radius: 50%;
+}
+
+.cards-container .card .info {
+    width: 100%;
+}
+
+.cards-container .card .info .name {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.cards-container .card .info .name span {
+    color: var(--blue-color);
+}
+
+.cards-container .card .info .description {
+    margin-bottom: 1rem;
+}
+
+.cards-container .card .info .numbers ul {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.repos-container {
+    margin-top: 3rem;
+}
+
+.repos-container .repos .repo {
+    background-color: var(--grey-color);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.repos-container .repos .repo:last-child {
+    margin-bottom: 0;
+}
+
+.repos-container .repos .repo .name {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.repos-container .repos .repo .name span {
+    font-size: 14px;
+    border: 1px solid var(--light-grey-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+
+.repos-container .repos .repo .description {
+    margin-bottom: 1rem;
+}
+
+.repos-container .repos .repo .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.repos-container .repos .repo .info .topics ul,
+.repos-container .repos .repo .info .info-2 {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.repos-container .repos .repo .info .info-2 {
+    font-size: 14px;
+    gap: 1rem;
+}
+
+.repos-container .repos .repo .info .info-2 div {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.repos-container .repos .repo .info .info-2 div img {
+    display: block;
+    width: 24px;
+}
+
+.repos-container .repos .repo .info .topics ul li {
+    color: var(--blue-color);
+    background-color: #0365d61a;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+}
+
+.repos-container .repos .repo .info .topics ul li:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+@media (max-width: 640px) {
+    .cards-container .card {
+        flex-direction: column;
+        align-items: center;
+    }
+}
