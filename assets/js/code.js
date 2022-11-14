@@ -3,6 +3,17 @@ const form = document.getElementById('src-form');
 const search = document.getElementById('search');
 const card = document.getElementById('card-container');
 const reposContainer = document.getElementById('repos');
+const apiStatus = document.getElementById('api-status');
+
+async function checkAPI() {
+    await fetch(APIURL + 'octocat').then((response) => {
+        if (response.status != '200') {
+            apiStatus.textContent = 'API status: offline'
+        } else {
+            apiStatus.textContent = 'API status: online'
+        }
+    })
+}
 
 async function getUser(username) {
     try {
@@ -124,7 +135,10 @@ function createErrorCard(message) {
     `
 
     card.innerHTML = cardHTML;
+    reposContainer.innerHTML = '';
 }
+
+checkAPI();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
