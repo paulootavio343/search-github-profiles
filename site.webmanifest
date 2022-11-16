@@ -2,7 +2,7 @@
     "name": "Search GitHub Profile",
     "short_name": "GitHub Profiles",
     "description": "Search GitHub profiles.",
-    "start_url": "https://search-github-profiles.netlify.app/",
+    "start_url": "https://search-github-profiles-34.netlify.app/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
