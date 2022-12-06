@@ -20,9 +20,9 @@ async function getUser(username) {
         const { data } = await axios(APIURL + username);
         createUserCard(data);
     } catch (error) {
-        if (error.response.status == 404) {
+        if (error.response && error.response.status == 404) {
             createErrorCard('No profile with this username.');
-        } else {
+        } else if (error.response) {
             createErrorCard('Error fetching data from the API.');
         }
     }
@@ -33,9 +33,9 @@ async function getRepos(username) {
         const { data } = await axios(APIURL + username + '/repos');
         createRepoCard(data);
     } catch (error) {
-        if (error.response.status == 404) {
+        if (error.response && error.response.status === 404) {
             createErrorCard('No repository found.');
-        } else {
+        } else if (error.response) {
             createErrorCard('Error fetching data from the API.');
         }
     }
