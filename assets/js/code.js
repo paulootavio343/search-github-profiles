@@ -47,7 +47,7 @@ function createRepoCard(repos) {
         const cardHTML = `
         <div class="repo">
             <div class="name">
-                <h1>${repo.name}</h1>
+                <a href="https://github.com/${repo.owner.login}/${repo.name}" target="_blank" rel="nofollow">${repo.name}</a>
                 <span class="visibility">${repo.visibility}</span>
             </div>
     
@@ -119,6 +119,10 @@ function createUserCard(user) {
                     <li class="following">${user.following} following</li>
                     <li class="repos">${user.public_repos} repos</li>
                 </ul>
+            </div>
+
+            <div class="visit-profile">
+                <a href="https://github.com/${user.login}" target="_blank" rel="nofollow">Visit profile</a>
             </div>
         </div>
     </div>

@@ -175,6 +175,17 @@ img {
     margin-bottom: 1rem;
 }
 
+.repos-container .repos .repo .name a {
+    font-size: 2em;
+    color: var(--blue-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.repos-container .repos .repo .name a:hover {
+    text-decoration: underline;
+}
+
 .repos-container .repos .repo .name span {
     font-size: 14px;
     border: 1px solid var(--light-grey-color);
@@ -230,6 +241,25 @@ img {
 .repos-container .repos .repo .info .topics ul li:hover {
     background-color: var(--blue-color);
     color: var(--white-color);
+}
+
+.visit-profile a {
+    display: inline-block;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+}
+
+.visit-profile a:hover {
+    transform: scale(1.1);
+}
+
+.visit-profile a:active {
+    transform: scale(0.9);
 }
 
 @media (max-width: 640px) {
