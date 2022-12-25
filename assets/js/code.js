@@ -44,7 +44,7 @@ async function getRepos(username) {
 function createRepoCard(repos) {
     reposContainer.innerHTML = '';
     repos.forEach(repo => {
-        const cardHTML = `
+        let cardHTML = `
         <div class="repo">
             <div class="name">
                 <a href="https://github.com/${repo.owner.login}/${repo.name}" target="_blank" rel="nofollow">${repo.name}</a>
@@ -57,7 +57,13 @@ function createRepoCard(repos) {
     
             <div class="info">
                 <div class="topics">
-                    <ul>
+                    <ul>`
+
+        for (let i = 0; i < repo.topics.length; i++) {
+            cardHTML += `<li>${repo.topics[i]}</li>`;
+        }
+
+        cardHTML += `
                         <li>${repo.topics[0]}</li>
                     </ul>
                 </div>
