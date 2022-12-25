@@ -63,6 +63,8 @@ function createRepoCard(repos) {
             cardHTML += `<li>${repo.topics[i]}</li>`;
         }
 
+        let updated_datetime = new Date(repo.updated_at).toLocaleString();
+
         cardHTML += `
                         <li>${repo.topics[0]}</li>
                     </ul>
@@ -79,7 +81,7 @@ function createRepoCard(repos) {
                     </div>
                     <div class="updated">
                         <img src="assets/icons/schedule.svg" alt="Updated">
-                        ${repo.updated_at}
+                        ${updated_datetime}
                     </div>
                     <div class="stars">
                         <img src="assets/icons/star.svg" alt="Stars">
